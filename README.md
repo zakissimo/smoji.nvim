@@ -28,7 +28,13 @@ For example, using vim-plug:
    Plug 'zakissimo/smoji.nvim'
    ```
 
-2. Reload your Neovim configuration and run `:PlugInstall` to install the plugin.
+2. Require smoji somewhere in your configuration file (`init.lua`)
+
+    ```vim
+    require("smoji")
+    ```
+
+3. Reload your Neovim configuration and run `:PlugInstall` to install the plugin.
 
 ## Usage
 
@@ -72,7 +78,7 @@ This plugin was inspired by the [gitmoji](https://gitmoji.dev/) CLI tool, which 
 
 ## Contributing
 
-If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/your_username/neovim-emoji-prompt-plugin).
+If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/zakissimo/smoji.nvim).
 
 ---
 
