@@ -1,14 +1,10 @@
 # Smoji (Select Emoji)
 
-<!-- ![Neovim Emoji Prompt Plugin](https://example.com/neovim-emoji-prompt-plugin.png) -->
-TODO: Add image
+![Select Emoji Neovim Plugin](./screenshot.png)
 
 ## Overview
 
 The Select Emoji Plugin (Smoji) is a simple and lightweight plugin for Neovim that provides a fast and efficient way to insert emojis into your commit messages. Inspired by the popular CLI tool gitmoji, this plugin aims to improve the commit message writing experience by presenting a prompt with a curated list of emojis.
-
-<!-- ![Demo](https://example.com/neovim-emoji-prompt-demo.gif) -->
-TODO: Add gif
 
 ## Features
 
@@ -18,23 +14,28 @@ TODO: Add gif
 
 ## Installation
 
-Use your preferred package manager for Neovim, such as [vim-plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/VundleVim/Vundle.vim), or [packer.nvim](https://github.com/wbthomason/packer.nvim).
+Use your preferred package manager for Neovim, such as [Lazy](https://github.com/folke/lazy.nvim), [Vundle](https://github.com/VundleVim/Vundle.vim), or [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-For example, using vim-plug:
+For example, using Lazy:
 
-1. Add the following line to your Neovim configuration file (usually `init.vim` or `init.lua`).
+1. Add the following lines to your Neovim configuration file
 
-   ```vim
-   Plug 'zakissimo/smoji.nvim'
+   ```lua
+    { "zakissimo/smoji.nvim",
+        config = function()
+            require("smoji")
+            vim.keymap.set("n", "<Leader><Leader>e", "<CMD>Smoji<CR>")
+        end
+    }
    ```
 
-2. Require smoji somewhere in your configuration file (`init.lua`)
+2. Require smoji somewhere in your configuration file (if not done yet)
 
     ```vim
     require("smoji")
     ```
 
-3. Reload your Neovim configuration and run `:PlugInstall` to install the plugin.
+3. Reload your Neovim configuration
 
 ## Usage
 
@@ -69,7 +70,7 @@ TODO!
 If you prefer to use custom mappings instead of `:Smoji` command
 
 ```vim
-nnoremap <leader><leader>e :Smoji<CR>
+vim.keymap.set("n", "<Leader><Leader>e", "<CMD>Smoji<CR>")
 ```
 
 ## Acknowledgments
