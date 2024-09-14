@@ -89,7 +89,19 @@ M.select = function()
             vim.print("No choice made!")
         else
             local s = vim.split(choice, '-')
-            vim.cmd('normal! i' .. s[1])
+            local emoji = s[1]
+            if vim.bo.buftype == "terminal" then
+                print("terminal")
+                print(emoji)
+                local reg = "0"
+                local old_val = vim.fn.getreg(reg)
+                vim.fn.setreg(reg, emoji)
+                vim.cmd('normal! "0p')
+                vim.cmd("startinsert!")
+                vim.fn.setreg(reg, old_val)
+            else
+                vim.cmd("normal! i" .. emoji)
+            end
         end
     end)
 end

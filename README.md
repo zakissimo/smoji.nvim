@@ -21,12 +21,16 @@ For example, using Lazy:
 1. Add the following lines to your Neovim configuration file
 
    ```lua
-    { "zakissimo/smoji.nvim",
-        config = function()
-            require("smoji")
-            vim.keymap.set("n", "<Leader><Leader>e", "<CMD>Smoji<CR>")
-        end
-    }
+    "zakissimo/smoji.nvim",
+    cmd = "Smoji",
+    keys = {
+      { "<leader><leader>e", "<cmd>Smoji<cr>", desc = "Git[e]moji" },
+      { "<C-e>", "<cmd>Smoji<cr>", desc = "Git[e]moji", mode = "i"},
+      { "<C-e>", "<cmd>Smoji<cr>", desc = "Git[e]moji", mode = "t"},
+    },
+    config = function()
+      require("smoji")
+    end,
    ```
 
 2. Require smoji somewhere in your configuration file (if not done yet)
