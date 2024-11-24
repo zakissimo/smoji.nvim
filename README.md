@@ -22,6 +22,7 @@ For example, using Lazy:
 
    ```lua
     "zakissimo/smoji.nvim",
+    dependencies = { "stevearc/dressing.nvim" },
     cmd = "Smoji",
     keys = {
       { "<leader><leader>e", "<cmd>Smoji<cr>", desc = "Git[e]moji" },
