@@ -76,6 +76,7 @@ M.items = {
     "💸 - :money_with_wings: - Add sponsorships or money related infrastructure.",
     "🧵 - :thread: - Add or update code related to multithreading or concurrency.",
     "🦺 - :safety_vest: - Add or update code related to validation.",
+    "👌 - :ok_hand: - Resolving PR review comments.",
 }
 
 M.select = function()
